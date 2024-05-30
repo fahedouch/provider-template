@@ -29,17 +29,19 @@ func (mg *MyType) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
+// GetManagementPolicies of this MyType.
+func (mg *MyType) GetManagementPolicies() xpv1.ManagementPolicies {
+	return mg.Spec.ManagementPolicies
+}
+
 // GetProviderConfigReference of this MyType.
 func (mg *MyType) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-/*
-GetProviderReference of this MyType.
-Deprecated: Use GetProviderConfigReference.
-*/
-func (mg *MyType) GetProviderReference() *xpv1.Reference {
-	return mg.Spec.ProviderReference
+// GetPublishConnectionDetailsTo of this MyType.
+func (mg *MyType) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+	return mg.Spec.PublishConnectionDetailsTo
 }
 
 // GetWriteConnectionSecretToReference of this MyType.
@@ -57,17 +59,19 @@ func (mg *MyType) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
+// SetManagementPolicies of this MyType.
+func (mg *MyType) SetManagementPolicies(r xpv1.ManagementPolicies) {
+	mg.Spec.ManagementPolicies = r
+}
+
 // SetProviderConfigReference of this MyType.
 func (mg *MyType) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-/*
-SetProviderReference of this MyType.
-Deprecated: Use SetProviderConfigReference.
-*/
-func (mg *MyType) SetProviderReference(r *xpv1.Reference) {
-	mg.Spec.ProviderReference = r
+// SetPublishConnectionDetailsTo of this MyType.
+func (mg *MyType) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+	mg.Spec.PublishConnectionDetailsTo = r
 }
 
 // SetWriteConnectionSecretToReference of this MyType.
